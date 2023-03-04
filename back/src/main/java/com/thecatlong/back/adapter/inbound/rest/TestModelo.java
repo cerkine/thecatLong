@@ -1,12 +1,11 @@
 package com.thecatlong.back.adapter.inbound.rest;
 
-import lombok.Builder;
-import lombok.Setter;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
-@Builder
+@NoArgsConstructor
 @Getter
-@Setter
 public class TestModelo {
     private String nombre;
+
 }
