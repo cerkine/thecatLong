@@ -1,4 +1,4 @@
-package com.thecatlong.back.adapter.inbound.rest;
+package com.thecatlong.back.adapter.inbound.rest.dto;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

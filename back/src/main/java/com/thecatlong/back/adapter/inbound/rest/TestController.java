@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.thecatlong.back.adapter.inbound.rest.dto.TestModelo;
 import com.thecatlong.back.application.provider.in.TestSearchService;
 import com.thecatlong.back.domain.Test;
 
