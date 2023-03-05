@@ -25,8 +25,20 @@ public class TestAdapter implements TestService {
 
         return toDomain(optionalEntity.get());
     }
+    
+    @Override
+    public Test searchByNombre(String nombre) {
+        Optional<TestEntity> optionalEntity = testRepository.findByNombre(nombre);
+        if(!optionalEntity.isPresent()){
+            return null;
+        }
+        return toDomain(optionalEntity.get());
+        
+    }
+
+
     private Test toDomain(TestEntity entity) {
         return Test.builder().id(entity.getId()).nombre(entity.getNombre()).build();
     }
-    
+
 }

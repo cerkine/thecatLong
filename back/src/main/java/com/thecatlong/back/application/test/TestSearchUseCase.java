@@ -17,5 +17,9 @@ public class TestSearchUseCase implements TestSearchService{
     public Test searchById(long id) {
         return testService.searchById(id);
     }
+    @Override
+    public Test searchByNombre(String nombre) {
+        return testService.searchByNombre(nombre);
+    }
 
 }
