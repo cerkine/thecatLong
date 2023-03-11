@@ -10,6 +10,8 @@ databaseChangeLog:
           - column:  
               name:  id  
               type:  serial
+              constraints:
+                primaryKey: true
           - column: 
               name: codigo
               type: text

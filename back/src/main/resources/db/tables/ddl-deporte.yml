@@ -1,27 +1,23 @@
 databaseChangeLog:
   - changeSet:
-      id: create_table_campanya
+      id: create_table_deporte
       author: Yago
       changes:
       - createTable:  
-          tableName:  campanya  
+          tableName: deporte  
           schemaName: core
           columns:  
           - column:  
               name:  id  
               type:  serial
               constraints:
-                primaryKey: true  
+                primaryKey: true
+          - column: 
+              name: codigo
+              type: text
           - column: 
               name: nombre
               type: text
           - column: 
               name: descripcion
               type: text
-          - column:
-              name: fechaInicio
-              type: timestamp
-          - column:
-              name: fechaFin
-              type: timestamp
-              

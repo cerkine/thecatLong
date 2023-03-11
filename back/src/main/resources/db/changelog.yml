@@ -7,3 +7,11 @@ databaseChangeLog:
       file: db/tables/ddl-tipologia-producto.yml
   - include:
       file: db/tables/ddl-campanya.yml
+  - include:
+      file: db/tables/ddl-deporte.yml
+  - include:
+      file: db/tables/ddl-producto.yml
+  - include:
+      file: db/data/deporte_and_tipologia_producto.yml
+  - include:
+      file: db/data/producto.yml

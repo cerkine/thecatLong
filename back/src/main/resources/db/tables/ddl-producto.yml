@@ -1,0 +1,49 @@
+databaseChangeLog:
+  - changeSet:
+      id: create_table_producto
+      author: Yago
+      changes:
+      - createTable:  
+          tableName:  producto  
+          schemaName: core
+          columns:  
+          - column:  
+              name:  id  
+              type:  serial
+              constraints:
+                primaryKey: true
+          - column: 
+              name: nombre
+              type: text
+          - column: 
+              name: descripcion
+              type: text
+          - column: 
+              name: urlImagen
+              type: text
+          - column: 
+              name: precio
+              type: number
+          - column: 
+              name: descuento
+              type: number
+          - column:
+              name: stock
+              type: number
+              defaultValue: 100
+          - column:
+              name: id_tipologia_producto
+              type: integer
+              constraints:
+                foreignKeyName: fk_tipologia_producto_on_producto
+                referencedTableName: tipologia_producto
+                referencedColumnNames: id
+                referencedTableSchemaName: core
+          - column:
+              name: id_deporte
+              type: integer
+              constraints:
+                foreignKeyName: fk_deporte_on_producto
+                referencedTableName: deporte
+                referencedColumnNames: id
+                referencedTableSchemaName: core

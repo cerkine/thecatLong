@@ -1,0 +1,23 @@
+databaseChangeLog:
+  - changeSet:
+      id: loadData_deporte_and_tipologia_producto
+      author: yago
+      changes:    
+        - sql:
+            sql: INSERT INTO core.deporte ("codigo","nombre","descripcion") values ('FUT','Futbol','Catalogo asociado al futbol')
+        - sql:
+            sql: INSERT INTO core.deporte ("codigo","nombre","descripcion") values ('BAS','Basquet','Catalogo asociado al basquet')
+        - sql:
+            sql: INSERT INTO core.deporte ("codigo","nombre","descripcion") values ('GLF','Golf','Catalogo asociado al golf')
+        - sql:
+            sql: INSERT INTO core.tipologia_producto ("codigo","nombre","descripcion") values ('CAM','Camisetas','Catalogo asociado al camisetas')
+        - sql:
+            sql: INSERT INTO core.tipologia_producto ("codigo","nombre","descripcion") values ('PAN','Pantalones','Catalogo asociado al pantalones')
+        - sql:
+            sql: INSERT INTO core.tipologia_producto ("codigo","nombre","descripcion") values ('PRO','Protecciones','Catalogo asociado al protecciones')
+        - sql:
+            sql: INSERT INTO core.tipologia_producto ("codigo","nombre","descripcion") values ('BMB','Bambas','Catalogo asociado al bambas')
+        - sql:
+            sql: INSERT INTO core.tipologia_producto ("codigo","nombre","descripcion") values ('RAQ','Raquetas','Catalogo asociado al raquetas')
+        - sql:
+            sql: INSERT INTO core.tipologia_producto ("codigo","nombre","descripcion") values ('PLT','Pelotas','Catalogo asociado al pelotas')
