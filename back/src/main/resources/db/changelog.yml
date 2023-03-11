@@ -3,3 +3,7 @@ databaseChangeLog:
       file: db/ddl-schema.yml
   - include:
       file: db/ddl-test.yml
+  - include:
+      file: db/tables/ddl-tipologia-producto.yml
+  - include:
+      file: db/tables/ddl-campanya.yml

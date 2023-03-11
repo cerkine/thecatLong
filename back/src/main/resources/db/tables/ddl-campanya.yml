@@ -1,0 +1,25 @@
+databaseChangeLog:
+  - changeSet:
+      id: create_table_campanya
+      author: Yago
+      changes:
+      - createTable:  
+          tableName:  campanya  
+          schemaName: core
+          columns:  
+          - column:  
+              name:  id  
+              type:  serial
+          - column: 
+              name: nombre
+              type: text
+          - column: 
+              name: descripcion
+              type: text
+          - column:
+              name: fechaInicio
+              type: timestamp
+          - column:
+              name: fechaFin
+              type: timestamp
+              
