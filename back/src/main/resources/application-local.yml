@@ -2,7 +2,12 @@ server:
   port: 8080
 
 spring:
+  devtools:
+    restart:
+      enabled: false
   datasource:
     url: jdbc:postgresql://localhost:5432/back
-    username: ms-back
-    password: ms-back
+    username: postgres
+    password: 1234
+  liquibase:
+    change-log: classpath:db/changelog.yml

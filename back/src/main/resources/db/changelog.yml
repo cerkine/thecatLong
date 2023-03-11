@@ -1,0 +1,5 @@
+databaseChangeLog:
+  - include:
+      file: db/ddl-schema.yml
+  - include:
+      file: db/ddl-test.yml

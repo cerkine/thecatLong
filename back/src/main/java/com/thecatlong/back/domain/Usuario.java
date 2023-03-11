@@ -14,4 +14,5 @@ public class Usuario {
     private final String apellidos;
     // private final String 
     private final List<Pedido> pedidos; 
+    private final List<Producto> favoritos;
 }

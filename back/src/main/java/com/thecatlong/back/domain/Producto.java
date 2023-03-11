@@ -1,6 +1,7 @@
 package com.thecatlong.back.domain;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -19,6 +20,7 @@ public class Producto {
     private final Double precio;
     private final Double descuento;
     private final TipologiaProducto tipologiaProducto; 
+    private final List<Campanya> campanyas;
 
     // Auditoria generica
     private final LocalDateTime fechaModificacion;

@@ -55,7 +55,6 @@ build/
 !**/src/test/**/build/
 
 ### VS Code ###
-.vscode/
 
 back/mvnw.cmd
 .mvn/wrapper/maven-wrapper.jar
