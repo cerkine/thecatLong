@@ -20,8 +20,10 @@ public class DeporteSearchUseCase {
      * @return Lista de valores encontrados
      */
     public List<Deporte> searchByNombre(String nombre){
-        if (nombre != null && !nombre.isEmpty() )
-            return deporteService.findByNombre(nombre);
+        return deporteService.findByNombre(nombre);
+    }
+
+    public List<Deporte> getAll(){
         return deporteService.findAll();
     }
 

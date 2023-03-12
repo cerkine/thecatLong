@@ -28,7 +28,11 @@ public class DeporteController {
 
     @GetMapping("/deporte")
     public ResponseEntity<List<Deporte>> getDeporteByNombre(@PathParam(value = "nombre") String nombre){
-        List<Deporte> dList = deporteSearchUseCase.searchByNombre(nombre);
+        List<Deporte> dList;
+        if (nombre!= null && !nombre.isEmpty())
+            dList = deporteSearchUseCase.searchByNombre(nombre);
+        else 
+            dList = deporteSearchUseCase.getAll();
         return ResponseEntity.ok(dList);
     }
 }
