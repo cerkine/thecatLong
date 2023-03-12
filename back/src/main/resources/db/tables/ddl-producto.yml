@@ -19,7 +19,7 @@ databaseChangeLog:
               name: descripcion
               type: text
           - column: 
-              name: urlImagen
+              name: url_imagen
               type: text
           - column: 
               name: precio

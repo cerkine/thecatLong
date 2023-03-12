@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.core.convert.ConversionService;
 import org.springframework.stereotype.Service;
 
 import com.thecatlong.back.adapter.outbound.persistence.entity.DeporteEntity;
@@ -17,6 +18,7 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 public class DeporteAdapter implements DeporteService{
     private final DeporteRepository deporteRepository;
+    private final ConversionService conversionService;
     @Override
     public Deporte findById(Long id) {
         Optional<DeporteEntity> deporteEntity = deporteRepository.findById(id);
@@ -45,12 +47,8 @@ public class DeporteAdapter implements DeporteService{
         return deporteList;
     }
     
-    private Deporte toDomain(DeporteEntity deporteEntity) {
-        return Deporte.builder()
-            .codigo(deporteEntity.getCodigo())
-            .nombre(deporteEntity.getNombre())
-            .descripcion(deporteEntity.getDescripcion())
-            .id(deporteEntity.getId()).build();
+    private  Deporte toDomain(DeporteEntity deporteEntity) {
+        return conversionService.convert(deporteEntity, Deporte.class);
     }
 
     

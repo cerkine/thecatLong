@@ -4,14 +4,14 @@ databaseChangeLog:
       author: yago
       changes:  
         - sql:
-            sql: INSERT INTO core.producto ("urlImagen","nombre","descripcion",precio,descuento,id_tipologia_producto) values ('www','Camiseta Rayo Vallecano','Camiseta del Rayo Vallecano de la temporada 2022',15.90,0,1)
+            sql: INSERT INTO core.producto ("url_imagen","nombre","descripcion",precio,descuento,id_tipologia_producto,id_deporte) values ('www','Camiseta Rayo Vallecano','Camiseta del Rayo Vallecano de la temporada 2022',15.90,0,1,1)
         - sql:
-            sql: INSERT INTO core.producto ("urlImagen","nombre","descripcion",precio,descuento,id_tipologia_producto) values ('www','Camiseta Barcelona','Camiseta del Barcelona de la temporada 2022',17.90,0,1)
+            sql: INSERT INTO core.producto ("url_imagen","nombre","descripcion",precio,descuento,id_tipologia_producto,id_deporte) values ('www','Camiseta Barcelona','Camiseta del Barcelona de la temporada 2022',17.90,0,1,2)
         - sql:
-            sql: INSERT INTO core.producto ("urlImagen","nombre","descripcion",precio,descuento,id_tipologia_producto) values ('www','Pantalon Rayo Vallecano','Pantalon del Rayo Vallecano de la temporada 2022',15.90,0,2)
+            sql: INSERT INTO core.producto ("url_imagen","nombre","descripcion",precio,descuento,id_tipologia_producto,id_deporte) values ('www','Pantalon Rayo Vallecano','Pantalon del Rayo Vallecano de la temporada 2022',15.90,0,2,1)
         - sql:
-            sql: INSERT INTO core.producto ("urlImagen","nombre","descripcion",precio,descuento,id_tipologia_producto) values ('www','Coquera','Coquera futbol sala',15.90,0,3)
+            sql: INSERT INTO core.producto ("url_imagen","nombre","descripcion",precio,descuento,id_tipologia_producto,id_deporte) values ('www','Coquera','Coquera futbol sala',15.90,0,3,1)
         - sql:
-            sql: INSERT INTO core.producto ("urlImagen","nombre","descripcion",precio,descuento,id_tipologia_producto) values ('www','Zapatos de agarre','Zapazatos de agarre para golf',15.90,0,4)
+            sql: INSERT INTO core.producto ("url_imagen","nombre","descripcion",precio,descuento,id_tipologia_producto,id_deporte) values ('www','Zapatos de agarre','Zapazatos de agarre para golf',15.90,0,4,3)
         - sql:
-            sql: INSERT INTO core.producto ("urlImagen","nombre","descripcion",precio,descuento,id_tipologia_producto) values ('www','Bola de tennis','Bola de tennis',15.90,0,6)
+            sql: INSERT INTO core.producto ("url_imagen","nombre","descripcion",precio,descuento,id_tipologia_producto,id_deporte) values ('www','Bola de tennis','Bola de tennis',15.90,0,6,3)

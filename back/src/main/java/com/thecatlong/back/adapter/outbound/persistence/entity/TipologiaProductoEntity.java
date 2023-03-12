@@ -11,20 +11,20 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "deporte", schema = "core")
+@Table(name = "tipologia_producto", schema = "core")
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class DeporteEntity {
+public class TipologiaProductoEntity {
     @Id
     @GeneratedValue
     @Column
     private Long id;
-
     @Column
-    private String codigo;
+    private String codigo;    
     @Column
     private String nombre;
     @Column
     private String descripcion;
+
 }

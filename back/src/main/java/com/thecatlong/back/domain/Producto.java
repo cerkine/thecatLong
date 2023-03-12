@@ -3,6 +3,9 @@ package com.thecatlong.back.domain;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -10,6 +13,7 @@ import lombok.Getter;
 @Builder
 @Getter
 @AllArgsConstructor
+@JsonInclude(Include.NON_NULL)
 public class Producto {
     private final Long id;
     private final String nombre;
@@ -19,7 +23,7 @@ public class Producto {
     private final Deporte deporte;
     private final Double precio;
     private final Double descuento;
-    private final TipologiaProducto tipologiaProducto; 
+    private final TipologiaProducto tipologiaProducto;
     private final List<Campanya> campanyas;
 
     // Auditoria generica
@@ -27,5 +31,5 @@ public class Producto {
     private final LocalDateTime fechaCreacion;
     private final LocalDateTime fechaBaja;
     private final boolean deleted;
-    
+
 }
