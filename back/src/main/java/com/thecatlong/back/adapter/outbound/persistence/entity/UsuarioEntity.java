@@ -8,24 +8,33 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "deporte", schema = "core")
+@Table(name = "usuario", schema = "core")
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class DeporteEntity {
+@Builder
+public class UsuarioEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column
     private Long id;
 
     @Column
-    private String codigo;
-    @Column
     private String nombre;
     @Column
-    private String descripcion;
+    private String apellido1;
+    @Column
+    private String apellido2;
+    @Column
+    private String email;
+    @Column
+    private String password;
+    @Column
+    private String roles;
+
 }

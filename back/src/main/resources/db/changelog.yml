@@ -13,3 +13,5 @@ databaseChangeLog:
       file: db/data/deporte_and_tipologia_producto.yml
   - include:
       file: db/data/producto.yml
+  - include:
+      file: db/tables/ddl-usuarios.yml

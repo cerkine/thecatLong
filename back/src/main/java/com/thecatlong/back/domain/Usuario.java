@@ -11,7 +11,10 @@ public class Usuario {
     private final Long id;
     private final String nombre;
     private final String email;
-    private final String apellidos;
+    private final String apellido1;
+    private final String apellido2;
+    private final String password;
+    private final List<String> roles;
     // private final String 
     private final List<Pedido> pedidos; 
     private final List<Producto> favoritos;
