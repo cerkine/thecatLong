@@ -1,5 +1,7 @@
 package com.thecatlong.back.application.administracion;
 
+import java.util.List;
+
 import org.springframework.stereotype.Component;
 
 import com.thecatlong.back.application.provider.out.UsuarioService;
@@ -18,5 +20,9 @@ public class UsuarioUseCase {
 
     public Usuario login(Usuario usuario){
         return usuarioService.login(usuario);
+    }
+
+    public List<Usuario> listarUsuarios() {
+        return usuarioService.listarUsuario();
     }
 }

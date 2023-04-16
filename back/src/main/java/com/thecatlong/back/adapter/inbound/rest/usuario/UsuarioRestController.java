@@ -1,7 +1,10 @@
 package com.thecatlong.back.adapter.inbound.rest.usuario;
 
+import java.util.List;
+
 import org.springframework.core.convert.ConversionService;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,6 +28,11 @@ public class UsuarioRestController {
     public Usuario altaUsuario(@RequestBody UsuarioRequest request){
         Usuario usuario = conversionService.convert(request, Usuario.class);
         return usuarioUseCase.altaNuevo(usuario);
+    }
+
+    @GetMapping("/usuario")
+    public List<Usuario> listarUsuarios(){
+        return usuarioUseCase.listarUsuarios();
     }
 
     @PostMapping("/usuario/login")
