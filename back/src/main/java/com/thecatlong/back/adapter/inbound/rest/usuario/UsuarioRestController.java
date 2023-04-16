@@ -25,14 +25,14 @@ public class UsuarioRestController {
     private final ConversionService conversionService;
 
     @PostMapping("/usuario")
-    public Usuario altaUsuario(@RequestBody UsuarioRequest request){
+    public ResponseEntity<Usuario> altaUsuario(@RequestBody UsuarioRequest request){
         Usuario usuario = conversionService.convert(request, Usuario.class);
-        return usuarioUseCase.altaNuevo(usuario);
+        return ResponseEntity.ok(usuarioUseCase.altaNuevo(usuario));
     }
 
     @GetMapping("/usuario")
-    public List<Usuario> listarUsuarios(){
-        return usuarioUseCase.listarUsuarios();
+    public ResponseEntity<List<Usuario>> listarUsuarios(){
+        return ResponseEntity.ok(usuarioUseCase.listarUsuarios());
     }
 
     @PostMapping("/usuario/login")
