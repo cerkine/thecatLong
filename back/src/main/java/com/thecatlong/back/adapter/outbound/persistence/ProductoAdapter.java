@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.core.convert.ConversionService;
 import org.springframework.stereotype.Service;
 
 import com.thecatlong.back.adapter.outbound.persistence.converter.ProductoEntityToProducto;
@@ -20,6 +21,7 @@ public class ProductoAdapter implements ProductoService {
 
     private final ProductoRepository productoRepository;
     private final ProductoEntityToProducto converter;
+    private final ConversionService conversionService;
 
     @Override
     public Producto findById(Long id) {
@@ -40,6 +42,15 @@ public class ProductoAdapter implements ProductoService {
         List<ProductoEntity> productoEntities = productoRepository.findAll();
         return toDomainList(productoEntities);
     }
+
+    @Override
+    public Producto alta(Producto producto) {
+        ProductoEntity entity = conversionService.convert(producto, ProductoEntity.class);
+        entity = productoRepository.save(entity);
+        return toDomain(entity);
+    }
+
+
     private List<Producto> toDomainList(List<ProductoEntity> productoEntities){
         List<Producto> productoList = new ArrayList<>();
         if(productoEntities.isEmpty()) 
@@ -51,6 +62,8 @@ public class ProductoAdapter implements ProductoService {
     private Producto toDomain(ProductoEntity productoEntity) {
         return converter.convert(productoEntity);
     }
+
+    
 
     
 }

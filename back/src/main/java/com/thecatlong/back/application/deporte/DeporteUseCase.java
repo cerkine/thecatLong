@@ -11,7 +11,7 @@ import lombok.AllArgsConstructor;
 
 @Component
 @AllArgsConstructor
-public class DeporteSearchUseCase {
+public class DeporteUseCase {
     private final DeporteService deporteService;
 
     /**

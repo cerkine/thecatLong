@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.thecatlong.back.application.deporte.DeporteSearchUseCase;
+import com.thecatlong.back.application.deporte.DeporteUseCase;
 import com.thecatlong.back.domain.Deporte;
 
 import lombok.AllArgsConstructor;
@@ -19,7 +19,7 @@ import lombok.AllArgsConstructor;
 @RequestMapping("/api/v1")
 @AllArgsConstructor
 public class DeporteController {
-    private final DeporteSearchUseCase deporteSearchUseCase;
+    private final DeporteUseCase deporteSearchUseCase;
     @GetMapping("/deporte/{id}")
     public ResponseEntity<Deporte> getDeporteById(@PathVariable Long id){
         Deporte d = deporteSearchUseCase.searchById(id);

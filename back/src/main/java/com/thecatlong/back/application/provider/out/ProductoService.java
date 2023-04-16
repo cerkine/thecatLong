@@ -6,6 +6,10 @@ import com.thecatlong.back.domain.Producto;
 
 public interface ProductoService {
     Producto findById(Long id);
+
     List<Producto> findByNombre(String nombre);
+
     List<Producto> findAll();
+
+    Producto alta(Producto producto);
 }
