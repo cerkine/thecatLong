@@ -16,6 +16,7 @@ public class ProductoToProductoEntity implements Converter<Producto, ProductoEnt
     @Nullable
     public ProductoEntity convert(Producto producto) {
         return ProductoEntity.builder()
+            .id(producto.getId())
             .deporteEntity(DeporteEntity.builder().id(producto.getDeporte().getId()).build())
             .tipologiaProductoEntity(TipologiaProductoEntity.builder().id(producto.getTipologiaProducto().getId()).build())
             .descripcion(producto.getDescripcion())

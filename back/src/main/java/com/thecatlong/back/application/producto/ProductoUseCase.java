@@ -31,10 +31,22 @@ public class ProductoUseCase {
     }
 
     public Producto alta(Producto producto) {
+        validarDeporteYTipoligia(producto);
+        return productoService.save(producto);
+    }
+
+    public Producto modificar(Producto producto) {
+        validarDeporteYTipoligia(producto);
+        Producto productoRecuperado = productoService.findById(producto.getId());
+        ValidationUtils.validateNotNull(productoRecuperado, "no existe producto con esa id");
+
+        return productoService.save(producto);
+    }
+
+    private void validarDeporteYTipoligia(Producto producto){
         Deporte deporte = deporteService.findById(producto.getDeporte().getId());
         ValidationUtils.validateNotNull(deporte, "La id del deporte no es correcta");
         TipologiaProducto tipologiaProducto = tipologiaProductoService.getById(producto.getTipologiaProducto().getId());
         ValidationUtils.validateNotNull(tipologiaProducto, "La id de la tipologia de producto no es correcta");
-        return productoService.alta(producto);
     }
 }

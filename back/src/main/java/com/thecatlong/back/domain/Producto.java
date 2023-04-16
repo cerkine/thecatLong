@@ -9,13 +9,15 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
+import lombok.Setter;
 
 @Builder
 @Getter
 @AllArgsConstructor
 @JsonInclude(Include.NON_NULL)
 public class Producto {
-    private final Long id;
+    @Setter
+    private Long id;
     private final String nombre;
     private final Double stock;
     private final String descripcion;

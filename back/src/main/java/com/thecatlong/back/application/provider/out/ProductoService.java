@@ -11,5 +11,5 @@ public interface ProductoService {
 
     List<Producto> findAll();
 
-    Producto alta(Producto producto);
+    Producto save(Producto producto);
 }

@@ -44,7 +44,7 @@ public class ProductoAdapter implements ProductoService {
     }
 
     @Override
-    public Producto alta(Producto producto) {
+    public Producto save(Producto producto) {
         ProductoEntity entity = conversionService.convert(producto, ProductoEntity.class);
         entity = productoRepository.save(entity);
         return toDomain(entity);

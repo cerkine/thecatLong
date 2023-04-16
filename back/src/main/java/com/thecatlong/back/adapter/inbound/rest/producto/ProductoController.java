@@ -44,4 +44,12 @@ public class ProductoController {
         Producto productoAlta = productoUseCase.alta(producto);
         return ResponseEntity.ok(productoAlta);
     }
+
+    @PostMapping("/producto/{id}")
+    public ResponseEntity<Producto> modificarProducto(@PathVariable Long id, @RequestBody AltaRequest request){
+        Producto producto = conversionService.convert(request, Producto.class);
+        producto.setId(id);
+        Producto productoAlta = productoUseCase.modificar(producto);
+        return ResponseEntity.ok(productoAlta);
+    }
 }
