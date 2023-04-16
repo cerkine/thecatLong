@@ -15,3 +15,6 @@ spring:
     driver-class-name: org.postgresql.Driver
   liquibase:
     change-log: classpath:db/changelog.yml
+springdoc:
+  packagesToScan: com.thecatlong.back.adapter.inbound
+  pathsToMatch: /api/v1/**
