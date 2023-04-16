@@ -21,7 +21,7 @@ public class UsuarioAdapter implements UsuarioService {
     private final ConversionService conversionService;
 
     @Override
-    public Usuario altaUsuario(Usuario usuario) {
+    public Usuario save(Usuario usuario) {
         UsuarioEntity entity = conversionService.convert(usuario, UsuarioEntity.class);
         return conversionService.convert(usuarioRepository.save(entity), Usuario.class);
     }
@@ -51,6 +51,16 @@ public class UsuarioAdapter implements UsuarioService {
             usuarios.add(conversionService.convert(entity, Usuario.class));
         }
         return usuarios;
+    }
+
+    @Override
+    public Usuario getById(Long id) {
+        Optional<UsuarioEntity> entity = usuarioRepository.findById(id);
+        if(entity.isPresent()){
+            return conversionService.convert(entity.get(), Usuario.class);
+        }
+        return null;
+
     }
 
 }

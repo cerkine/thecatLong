@@ -14,6 +14,7 @@ public class UsuarioToUsuarioEntity implements Converter<Usuario, UsuarioEntity>
     @Nullable
     public UsuarioEntity convert(Usuario domain) {
         return UsuarioEntity.builder()
+            .id(domain.getId())
             .email(domain.getEmail())
             .nombre(domain.getNombre())
             .password(domain.getPassword())

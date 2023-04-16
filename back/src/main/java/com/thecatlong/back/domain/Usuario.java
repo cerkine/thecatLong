@@ -4,11 +4,13 @@ import java.util.List;
 
 import lombok.Builder;
 import lombok.Getter;
+import lombok.Setter;
 
 @Builder
 @Getter
 public class Usuario {
-    private final Long id;
+    @Setter
+    private Long id;
     private final String nombre;
     private final String email;
     private final String apellido1;

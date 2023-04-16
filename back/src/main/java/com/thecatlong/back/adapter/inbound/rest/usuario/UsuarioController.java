@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.core.convert.ConversionService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,6 +29,13 @@ public class UsuarioController {
     public ResponseEntity<Usuario> altaUsuario(@RequestBody UsuarioRequest request){
         Usuario usuario = conversionService.convert(request, Usuario.class);
         return ResponseEntity.ok(usuarioUseCase.altaNuevo(usuario));
+    }
+
+    @PostMapping("/usuario/{id}")
+    public ResponseEntity<Usuario> modificar(@PathVariable Long id, @RequestBody UsuarioRequest request){
+        Usuario usuario = conversionService.convert(request, Usuario.class);
+        usuario.setId(id);
+        return ResponseEntity.ok(usuarioUseCase.modificar(usuario));
     }
 
     @GetMapping("/usuario")
