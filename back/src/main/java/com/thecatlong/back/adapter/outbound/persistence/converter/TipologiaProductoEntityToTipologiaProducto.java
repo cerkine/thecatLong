@@ -18,6 +18,7 @@ public class TipologiaProductoEntityToTipologiaProducto
                 .codigo(entity.getCodigo())
                 .descripcion(entity.getDescripcion())
                 .id(entity.getId())
+                .nombre(entity.getNombre())
                 .build();
     }
 
