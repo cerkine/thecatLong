@@ -4,16 +4,16 @@ import org.springframework.core.convert.converter.Converter;
 import org.springframework.lang.Nullable;
 import org.springframework.stereotype.Component;
 
-import com.thecatlong.back.adapter.inbound.rest.producto.dto.AltaResponse;
+import com.thecatlong.back.adapter.inbound.rest.producto.dto.ProductoResponse;
 import com.thecatlong.back.domain.Producto;
 
 @Component
-public class ProductoToAltaResponseConverter implements Converter<Producto, AltaResponse>{
+public class ProductoToAltaResponseConverter implements Converter<Producto, ProductoResponse>{
 
     @Override
     @Nullable
-    public AltaResponse convert(Producto producto) {
-        return AltaResponse.builder()
+    public ProductoResponse convert(Producto producto) {
+        return ProductoResponse.builder()
             .deporteId(producto.getDeporte().getId())
             .descripcion(producto.getDescripcion())
             .descuento(producto.getDescuento())
