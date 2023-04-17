@@ -32,4 +32,8 @@ public class UsuarioUseCase {
         ValidationUtils.validateNotNull(validar, "el usuario con id pasada no existe");
         return usuarioService.save(usuario);
     }
+
+    public Usuario getUser(Long id) {
+        return usuarioService.getById(id);
+    }
 }

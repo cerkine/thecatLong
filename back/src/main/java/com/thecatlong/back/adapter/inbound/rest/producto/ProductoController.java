@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.thecatlong.back.adapter.inbound.rest.producto.dto.AltaRequest;
+import com.thecatlong.back.adapter.inbound.rest.producto.dto.AltaResponse;
 import com.thecatlong.back.application.producto.ProductoUseCase;
 import com.thecatlong.back.domain.Producto;
 
@@ -39,17 +40,19 @@ public class ProductoController {
     }
 
     @PostMapping("/producto")
-    public ResponseEntity<Producto> altaProducto(@RequestBody AltaRequest request){
+    public ResponseEntity<AltaResponse> altaProducto(@RequestBody AltaRequest request){
         Producto producto = conversionService.convert(request, Producto.class);
         Producto productoAlta = productoUseCase.alta(producto);
-        return ResponseEntity.ok(productoAlta);
+        AltaResponse altaResponse = conversionService.convert(productoAlta, AltaResponse.class);
+        return ResponseEntity.ok(altaResponse);
     }
 
     @PostMapping("/producto/{id}")
-    public ResponseEntity<Producto> modificarProducto(@PathVariable Long id, @RequestBody AltaRequest request){
+    public ResponseEntity<AltaResponse> modificarProducto(@PathVariable Long id, @RequestBody AltaRequest request){
         Producto producto = conversionService.convert(request, Producto.class);
         producto.setId(id);
         Producto productoAlta = productoUseCase.modificar(producto);
-        return ResponseEntity.ok(productoAlta);
+        AltaResponse altaResponse = conversionService.convert(productoAlta, AltaResponse.class);
+        return ResponseEntity.ok(altaResponse);
     }
 }

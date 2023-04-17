@@ -38,6 +38,11 @@ public class UsuarioController {
         return ResponseEntity.ok(usuarioUseCase.modificar(usuario));
     }
 
+    @GetMapping("/usuario/{id}")
+    public ResponseEntity<Usuario> getUser(@PathVariable Long id){
+        return ResponseEntity.ok(usuarioUseCase.getUser(id));
+    }
+
     @GetMapping("/usuario")
     public ResponseEntity<List<Usuario>> listarUsuarios(){
         return ResponseEntity.ok(usuarioUseCase.listarUsuarios());
