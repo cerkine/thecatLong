@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.thecatlong.back.adapter.inbound.rest.producto.dto.AltaRequest;
-import com.thecatlong.back.adapter.inbound.rest.producto.dto.AltaResponse;
+import com.thecatlong.back.adapter.inbound.rest.producto.dto.ProductoResponse;
 import com.thecatlong.back.application.producto.ProductoUseCase;
 import com.thecatlong.back.domain.Producto;
 
@@ -28,9 +28,10 @@ public class ProductoController {
     private final ProductoUseCase productoUseCase;
     private final ConversionService conversionService;
     @GetMapping("/producto/{id}")
-    public ResponseEntity<Producto> getProductoById(@PathVariable Long id){
+    public ResponseEntity<ProductoResponse> getProductoById(@PathVariable Long id){
         Producto d = productoUseCase.searchById(id);
-        return ResponseEntity.ok(d);
+        ProductoResponse response = conversionService.convert(d, ProductoResponse.class);
+        return ResponseEntity.ok(response);
     }
 
     @GetMapping("/producto")
@@ -40,19 +41,19 @@ public class ProductoController {
     }
 
     @PostMapping("/producto")
-    public ResponseEntity<AltaResponse> altaProducto(@RequestBody AltaRequest request){
+    public ResponseEntity<ProductoResponse> altaProducto(@RequestBody AltaRequest request){
         Producto producto = conversionService.convert(request, Producto.class);
         Producto productoAlta = productoUseCase.alta(producto);
-        AltaResponse altaResponse = conversionService.convert(productoAlta, AltaResponse.class);
+        ProductoResponse altaResponse = conversionService.convert(productoAlta, ProductoResponse.class);
         return ResponseEntity.ok(altaResponse);
     }
 
     @PostMapping("/producto/{id}")
-    public ResponseEntity<AltaResponse> modificarProducto(@PathVariable Long id, @RequestBody AltaRequest request){
+    public ResponseEntity<ProductoResponse> modificarProducto(@PathVariable Long id, @RequestBody AltaRequest request){
         Producto producto = conversionService.convert(request, Producto.class);
         producto.setId(id);
         Producto productoAlta = productoUseCase.modificar(producto);
-        AltaResponse altaResponse = conversionService.convert(productoAlta, AltaResponse.class);
+        ProductoResponse altaResponse = conversionService.convert(productoAlta, ProductoResponse.class);
         return ResponseEntity.ok(altaResponse);
     }
 }
