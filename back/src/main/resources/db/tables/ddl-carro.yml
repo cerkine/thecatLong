@@ -1,0 +1,64 @@
+databaseChangeLog:
+  - changeSet:
+      id: create_table_carro
+      author: Yago
+      changes:
+      - createTable:  
+          tableName:  carro  
+          schemaName: core
+          columns:  
+          - column:  
+              name:  id  
+              type:  serial
+              constraints:
+                primaryKey: true  
+          - column: 
+              name: id_usuario
+              type: integer
+              constraints:
+                foreignKeyName: fk_usuario_on_carro
+                referencedTableName: usuario
+                referencedColumnNames: id
+                referencedTableSchemaName: core
+          - column: 
+              name: activo
+              type: boolean
+          - column:
+              name: fecha_creacion
+              type: timestamp
+          - column:
+              name: fecha_modificacion
+              type: timestamp
+          - column:
+              name: fecha_compra
+              type: timestamp
+  - changeSet:
+      id: create_table_producto_carro
+      author: Yago
+      changes:
+      - createTable:  
+          tableName:  producto_carro  
+          schemaName: core
+          columns:  
+          - column: 
+              name: id_carro
+              type: integer
+              constraints:
+                foreignKeyName: fk_carro_on_producto_carro
+                referencedTableName: carro
+                referencedColumnNames: id
+                referencedTableSchemaName: core
+                primaryKey: true
+          - column: 
+              name: id_producto
+              type: integer
+              constraints:
+                foreignKeyName: fk_producto_on_producto_carro
+                referencedTableName: producto
+                referencedColumnNames: id
+                referencedTableSchemaName: core
+                primaryKey: true
+          - column: 
+              name: cantidad
+              type: integer
+          

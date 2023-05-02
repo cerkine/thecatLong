@@ -17,7 +17,6 @@ public class Usuario {
     private final String apellido2;
     private final String password;
     private final List<String> roles;
-    // private final String 
-    private final List<Pedido> pedidos; 
+    private final List<Carro> carros; 
     private final List<Producto> favoritos;
 }

@@ -15,3 +15,5 @@ databaseChangeLog:
       file: db/data/producto.yml
   - include:
       file: db/tables/ddl-usuarios.yml
+  - include:
+      file: db/tables/ddl-carro.yml
