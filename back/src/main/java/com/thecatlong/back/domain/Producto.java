@@ -27,6 +27,7 @@ public class Producto {
     private final Double descuento;
     private final TipologiaProducto tipologiaProducto;
     private final List<Campanya> campanyas;
+    private final Long cantidad;
 
     // Auditoria generica
     private final LocalDateTime fechaModificacion;

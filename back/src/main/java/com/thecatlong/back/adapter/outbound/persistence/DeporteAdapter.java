@@ -47,7 +47,7 @@ public class DeporteAdapter implements DeporteService{
         return deporteList;
     }
     
-    private  Deporte toDomain(DeporteEntity deporteEntity) {
+    public Deporte toDomain(DeporteEntity deporteEntity) {
         return conversionService.convert(deporteEntity, Deporte.class);
     }
 
