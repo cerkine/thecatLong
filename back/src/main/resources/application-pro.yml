@@ -1,0 +1,25 @@
+server:
+  # port: 8080
+  port: 8081
+
+spring:
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        format_sql: true
+  devtools:
+    restart:
+      enabled: false
+  datasource:
+    url: jdbc:postgresql://localhost:5432/back
+    username: postgres
+    password: 1234
+    driver-class-name: org.postgresql.Driver
+  liquibase:
+    change-log: classpath:db/changelog.yml
+springdoc:
+  packagesToScan: com.thecatlong.back.adapter.inbound
+  pathsToMatch: /api/v1/**
